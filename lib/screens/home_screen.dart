@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grade_calculator/screens/grade_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 34.0,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1.2,
+                letterSpacing: 1.5,
               ),
             ),
             Text(
@@ -25,21 +26,33 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 34.0,
                 fontWeight: FontWeight.bold,
-                letterSpacing: 1.2,
+                letterSpacing: 1.5,
               ),
             ),
             SizedBox(height: 50.0),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 80.0),
-              height: 45.0,
-              decoration: BoxDecoration(
-                color: Colors.blueGrey[200],
-                borderRadius: BorderRadius.circular(10.0),
+            GestureDetector(
+              onTap: () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => GradeScreen(),
+                ),
               ),
-              child: Text(
-                'PROCEED',
-                style: TextStyle(
-                  fontSize: 30.0,
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 80.0),
+                alignment: Alignment.center,
+                height: 45.0,
+                decoration: BoxDecoration(
+                  color: Colors.blueGrey[200],
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Text(
+                  'PROCEED',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.w600,
+                    letterSpacing: 1.2,
+                  ),
                 ),
               ),
             ),

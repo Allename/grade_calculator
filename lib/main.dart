@@ -6,14 +6,14 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Grade Calculator',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.cyan[200],
+        primaryColor: Colors.blueGrey,
       ),
       home: HomeScreen(),
     );

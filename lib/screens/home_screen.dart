@@ -6,32 +6,44 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: Container(
-        child: Padding(
-          padding: EdgeInsets.all(10.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'GRADE',
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'GRADE',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 34.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
+            ),
+            Text(
+              'CALCULATOR',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 34.0,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
+            ),
+            SizedBox(height: 50.0),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 80.0),
+              height: 45.0,
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[200],
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              child: Text(
+                'PROCEED',
                 style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 34.0,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
+                  fontSize: 30.0,
                 ),
               ),
-              Text(
-                'CALCULATOR',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 34.0,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -18,6 +18,8 @@ class _GradeScreenState extends State<GradeScreen> {
     'ESM216',
   ];
 
+  int value;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +42,7 @@ class _GradeScreenState extends State<GradeScreen> {
             Row(
               children: <Widget>[
                 DropdownButton(
-                  hint: Text('Selecct course'),
+                  hint: Text('Select course'),
                   value: valueChoose,
                   onChanged: (newValue) {
                     setState(() {
@@ -48,11 +50,26 @@ class _GradeScreenState extends State<GradeScreen> {
                     });
                   },
                   items: listItem.map((valueItem) {
-                    return DropdownButton<String>(
+                    return DropdownMenuItem<String>(
                       value: valueItem,
                       child: Text(valueItem),
                     );
                   }).toList(),
+                ),
+                DropdownButton(
+                  hint: Text('Select Course Unit'),
+                  value: valueChoose,
+                  onChanged: (newValue) {
+                    setState(() {
+                      valueChoose = newValue;
+                    });
+                  },
+                  //items: listItem.map((valueItem) {
+                    //return DropdownMenuItem
+                  //})
+                ),
+                DropdownButton(
+                  hint: Text('Select Grade'),
                 ),
               ],
             ),

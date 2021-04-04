@@ -18,7 +18,13 @@ class _GradeScreenState extends State<GradeScreen> {
     'ESM216',
   ];
 
-  int value;
+  int valueCurrent;
+  List listValue = [
+    1,
+    2,
+    3,
+    4,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -57,19 +63,22 @@ class _GradeScreenState extends State<GradeScreen> {
                   }).toList(),
                 ),
                 DropdownButton(
-                  hint: Text('Select Course Unit'),
-                  value: valueChoose,
-                  onChanged: (newValue) {
-                    setState(() {
-                      valueChoose = newValue;
-                    });
-                  },
-                  //items: listItem.map((valueItem) {
-                    //return DropdownMenuItem
-                  //})
-                ),
+                    hint: Text('Select unit'),
+                    value: valueCurrent,
+                    onChanged: (newValue) {
+                      setState(() {
+                        valueCurrent = newValue;
+                      });
+                    },
+                    items: listValue.map((valueItem) {
+                      return DropdownMenuItem<int>(
+                        value: valueItem,
+                        child: Text(valueItem),
+                      );
+                    }).toList(),
+                  ),
                 //DropdownButton(
-                  //hint: Text('Select Grade'),
+                //hint: Text('Select Grade'),
                 //),
               ],
             ),

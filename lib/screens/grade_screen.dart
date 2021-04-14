@@ -19,24 +19,6 @@ class _GradeScreenState extends State<GradeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text(
-                  'Course Code',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  'Course Units',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
-                ),
-                Text(
-                  'Grade',
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
-                ),
-              ],
-            ),
-            SizedBox(height: 20.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
                 SizedBox(
                   child: TextField(
                     keyboardType: TextInputType.text,
@@ -49,7 +31,7 @@ class _GradeScreenState extends State<GradeScreen> {
                   child: DropdownButton(
                     //value: ,
                     hint: Text(
-                      'Select grade',
+                      'Select unit',
                       style: TextStyle(fontSize: 5),
                     ),
                   ),
@@ -57,7 +39,7 @@ class _GradeScreenState extends State<GradeScreen> {
                 SizedBox(
                   child: TextField(
                     keyboardType: TextInputType.text,
-                    decoration: InputDecoration(hintText: 'Input Course'),
+                    decoration: InputDecoration(hintText: 'Input Grade'),
                   ),
                   width: 100.0,
                 ),

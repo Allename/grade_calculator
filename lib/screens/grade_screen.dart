@@ -6,26 +6,6 @@ class GradeScreen extends StatefulWidget {
 }
 
 class _GradeScreenState extends State<GradeScreen> {
-  String valueChoose;
-  List listItem = [
-    'BLD232',
-    'BLD213',
-    'BLD214',
-    'BLD211',
-    'CEG211',
-    'SVY217',
-    'GEG217',
-    'ESM216',
-  ];
-
-  int valueCurrent;
-  List listValue = [
-    1,
-    2,
-    3,
-    4,
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,52 +15,73 @@ class _GradeScreenState extends State<GradeScreen> {
       body: Container(
         padding: EdgeInsets.all(20.0),
         child: Column(
-          children: [
+          children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Text('Course Codes'),
-                Text('Course Units'),
-                Text('Grade'),
+                Text(
+                  'Course Code',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  'Course Units',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
+                ),
+                Text(
+                  'Grade',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w600),
+                ),
               ],
             ),
             SizedBox(height: 20.0),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                DropdownButton(
-                  hint: Text('Select course'),
-                  value: valueChoose,
-                  onChanged: (newValue) {
-                    setState(() {
-                      valueChoose = newValue;
-                    });
-                  },
-                  items: listItem.map((valueItem) {
-                    return DropdownMenuItem<String>(
-                      value: valueItem,
-                      child: Text(valueItem),
-                    );
-                  }).toList(),
-                ),
-                DropdownButton(
-                    hint: Text('Select unit'),
-                    value: valueCurrent,
-                    onChanged: (newValue) {
-                      setState(() {
-                        valueCurrent = newValue;
-                      });
-                    },
-                    items: listValue.map((valueItem) {
-                      return DropdownMenuItem<int>(
-                        value: valueItem,
-                        child: Text(valueItem),
-                      );
-                    }).toList(),
+                SizedBox(
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(hintText: 'Input Grade'),
                   ),
-                //DropdownButton(
-                //hint: Text('Select Grade'),
-                //),
+                  width: 100.0,
+                ),
+                SizedBox(
+                  width: 60.0,
+                  child: DropdownButton(
+                    //value: ,
+                    hint: Text(
+                      'Select grade',
+                      style: TextStyle(fontSize: 5),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  child: TextField(
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(hintText: 'Input Course'),
+                  ),
+                  width: 100.0,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.remove_circle),
+                  color: Colors.red,
+                ),
               ],
+            ),
+            Container(
+              padding: EdgeInsets.all(20.0),
+              child: Column(
+                children: <Widget>[
+                  MaterialButton(
+                    color: Colors.blueGrey,
+                    child: Text(
+                      'ADD',
+                      style: TextStyle(color: Colors.white, fontSize: 20.0),
+                    ),
+                    onPressed: () {},
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -89,20 +90,4 @@ class _GradeScreenState extends State<GradeScreen> {
   }
 }
 
-//child: Column(
-//children: <Widget>[
-//TextField(
-//keyboardType: TextInputType.text,
-//decoration: InputDecoration(
-//hintText: 'Enter course',
-//),
-//),
-//SizedBox(height: 20.0),
-//TextField(
-//keyboardType: TextInputType.number,
-//decoration: InputDecoration(
-//hintText: 'nter ',
-//),
-//),
-//],
-//),
+

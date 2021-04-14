@@ -30,6 +30,7 @@ class _GradeScreenState extends State<GradeScreen> {
                   width: 60.0,
                   child: DropdownButton(
                     //value: ,
+                    //onChanged: ,
                     hint: Text(
                       'Select unit',
                       style: TextStyle(fontSize: 5),
@@ -43,10 +44,15 @@ class _GradeScreenState extends State<GradeScreen> {
                   ),
                   width: 100.0,
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.remove_circle),
-                  color: Colors.red,
+                Expanded(
+                  child: IconButton(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 47.0,
+                    ),
+                    onPressed: () {},
+                    icon: Icon(Icons.remove_circle),
+                    color: Colors.red,
+                  ),
                 ),
               ],
             ),
@@ -62,6 +68,17 @@ class _GradeScreenState extends State<GradeScreen> {
                     ),
                     onPressed: () {},
                   ),
+                  MaterialButton(
+                    color: Colors.red,
+                    child: Text(
+                      'CALCULATE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ),
@@ -71,5 +88,3 @@ class _GradeScreenState extends State<GradeScreen> {
     );
   }
 }
-
-

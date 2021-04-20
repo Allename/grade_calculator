@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grade_calculator/screens/working_screen.dart';
 
 class GradeScreen extends StatefulWidget {
   @override
@@ -39,7 +40,7 @@ class _GradeScreenState extends State<GradeScreen> {
                   height: 100.0,
                   width: 300.0,
                   decoration: BoxDecoration(
-                    color: Colors.blueGrey,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   child: Column(
@@ -50,7 +51,13 @@ class _GradeScreenState extends State<GradeScreen> {
               Container(
                 margin: EdgeInsets.fromLTRB(250.0, 170.0, 0, 0),
                 child: FloatingActionButton(
-                  onPressed: () {},
+                  child: Icon(Icons.add),
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => WorkingScreen(),
+                    ),
+                  ),
                   backgroundColor: Colors.blueGrey,
                 ),
               ),
